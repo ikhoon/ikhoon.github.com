@@ -10,7 +10,7 @@
   </head>
   <body ng-app="myApp">
     <h3>카카오톡 링크는 카카오톡 앱이 설치되어 있는 모바일 기기에서만 전송 가능합니다.</h3>
-    <a id="kakao-link-btn" send-kaka-link>
+    <a id="kakao-link-btn" send-kakao-link>
       <img src="http://dn.api1.kage.kakao.co.kr/14/dn/btqa9B90G1b/GESkkYjKCwJdYOkLvIBKZ0/o.jpg" />
     </a>
 
@@ -24,6 +24,7 @@
         restrict: 'A',
         link: function(scope, element, attrs) {
           element.bind('click', function() {
+            alert("aaaaaaaaaaaaaaaaaaa");
             Kakao.Link.sendTalkLink({
               label: '안녕하세요, 꽃다운 ' + Math.floor(Math.random()*(70)+ 15) + '살 개발자입니다.'
             });
