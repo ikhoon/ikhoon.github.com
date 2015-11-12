@@ -22,6 +22,15 @@
     app.directive('sendKakaoLink', function() {
       return {
         restrict: 'EA',
+        scope: {
+                context: '=data',
+                getContext: '=',
+                type: '@',
+                name: '@',
+                classname: '@',
+                onShareSuccess: '&',
+                onShareFailure: '&'
+            },
         replace: true,
         template: '<a href="javascript:;" class="link_{{type}}"><span class="img_comm ico_talk {{classname}} #{{type}}"></span>@@@@@{{name}}</a>',
         link: function(scope, element, attrs) {
