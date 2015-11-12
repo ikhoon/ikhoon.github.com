@@ -22,6 +22,8 @@
     app.directive('sendKakaoLink', function() {
       return {
         restrict: 'A',
+        replace: true,
+        template: '<h1>dkdkdkdkdk</h1>',
         link: function(scope, element, attrs) {
           element.bind('click', function() {
             alert("aaaaaaaaaaaaaaaaaaa");
