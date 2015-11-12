@@ -23,7 +23,7 @@
       return {
         restrict: 'A',
         replace: true,
-        template: '<h1>dkdkdkdkdk</h1>',
+        template: '<a href="javascript:;" class="link_{{type}}"><span class="img_comm ico_talk {{classname}} #{{type}}"></span>{{name}}</a>',
         link: function(scope, element, attrs) {
           element.bind('click', function() {
             alert("aaaaaaaaaaaaaaaaaaa");
