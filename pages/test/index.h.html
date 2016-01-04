@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta property="al:iphone:url" content="kakaotalk://gift/home" />
+    <meta property="al:iphone:app_store_id" content="362057947" />
+    <meta property="al:iphone:app_name" content="카카오톡" />
+    <meta property="al:android:url" content="kakaotalk://gift/home" />
+    <meta property="al:android:package" content="com.kakao.talk" />
+    <meta property="al:android:app_name" content="카카오톡" />
+    <meta property="al:web:should_fallback" content="false" />
+      <meta property="og:title" content="g" />
+      <meta property="og:image" content="http://gift-s.kakaocdn.net/dn/gift/etc/big_image.jpg" />
+      <meta property="og:description" content="ggggg" />
+      <script src="https://raw.githubusercontent.com/html5crew/web2app/master/dist/web2app-standalone-1.0.11.js"></script>
+  </head>
+<script>
+var appLoc = "kakaotalk://gift/home";
+  function web2app() {
+            var strs = appLoc.split(":\/\/");
+            var intentURI = "intent://" + strs[1] + "#Intent;scheme=" + strs[0] + ";package=com.kakao.talk;end";
+
+            daumtools.web2app({
+                urlScheme: appLoc,                                 // iphone : custom scheme
+                intentURI: intentURI,                                 // android : intent URI
+                appName: '카카오톡',                                 // application Name (ex. facebook, twitter, daum)
+                universalLink : 'https://talk-apps.kakao.com/scheme/kakaotalk%3A%2F%2Fgift%2Fhome',
+                storeURL: ua.os.android ? 'market://details?id=com.kakao.talk' : 'itms-apps://itunes.apple.com/app/id362057947',                                 // app store URL
+                willInvokeApp: function () {
+                },                  // function for logging
+                onAppMissing: function () {
+                },                  // fallback function (default. move to appstore)
+                onUnsupportedEnvironment: function () {
+                }        // fallback function
+            });
+        }
+        ;
+</script>
+  <body style="background: #ffffff;" onLoad="web2app()">
+ <h1>h</h1>
+  </body>
+</html>
+
